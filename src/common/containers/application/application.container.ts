@@ -10,12 +10,12 @@ import {RouteConfig, ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 import {Navbar} from "../../components/navbar/navbar.component";
 import {Authentication} from "../../../authentication/containers/authentication/authentication.container";
 import {AuthenticationService} from "../../../authentication/services/authentication.service";
-import {BusyHandlerService} from "../../services/busyHandler.service";
 import {Spinner} from "../../components/spinner/spinner.component";
 import {StockService} from "../../../stock/services/stock.service";
 import {EditStockPage} from "../../../stock/containers/edit-stock-page/edit-stock-page.container";
 import {AddStockPage} from "../../../stock/containers/add-stock-page/add-stock-page.container";
 import {ApplicationSandbox} from "../../sandboxes/application.sandbox";
+import {BusyHandlerService} from "../../services/busyHandler.service";
 @Component({
     selector: "application",
     providers: [Title, AuthenticationService, BusyHandlerService, StockService, ApplicationSandbox],

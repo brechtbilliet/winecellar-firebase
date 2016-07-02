@@ -45,7 +45,7 @@ module.exports = {
         extensions: ['', '.ts', '.js', '.json']
     },
     debug: true,
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     // devtool: 'source-map',
     plugins: [
         new CopyWebpackPlugin([

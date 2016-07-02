@@ -1,12 +1,16 @@
 import {Injectable} from "@angular/core";
 import {Wine} from "../entities/Wine";
 import {StockService} from "../services/stock.service";
-import {AngularFire} from "angularfire2/angularfire2";
+import {AngularFire, FirebaseAuthState} from "angularfire2/angularfire2";
 import {Observable} from "rxjs/Rx";
 
 @Injectable()
 export class StockPageSandbox {
-    wines$: Observable<Array<Wine>> = this.af.database.list(`users/${this.af.auth.getAuth().uid}/wines`);
+    wines$: Observable<Array<Wine>> = this.af.auth.asObservable()
+        .filter((auth: FirebaseAuthState) => auth !== null)
+        .flatMap((auth: FirebaseAuthState) => {
+            return this.af.database.list(`users/${auth.uid}/wines`);
+        });
 
     constructor(private stockService: StockService, private af: AngularFire) {
     }
