@@ -12,7 +12,7 @@ http://winecellar.surge.sh
 ### Install
 
 ```sh
-git clone git@github.com/brechtbilliet/winecellar.git
+git clone git@github.com/brechtbilliet/winecellar-firebase.git
 cd winecellar
 npm install
 npm start --apikey=<yourapikeyforwine.com> --backendenv=http://localhost:3000/api
@@ -39,6 +39,7 @@ npm run deploy --apikey=<yourapikeyforwine.com> --backendenv=http://localhost:30
 - [x] @ngrx/store
 - [x] redux architecture
 - [x] shadow DOM
+- [x] Firebase interaction
 
 ### Features
 
