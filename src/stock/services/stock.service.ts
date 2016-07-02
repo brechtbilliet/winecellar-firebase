@@ -17,11 +17,12 @@ export class StockService {
     }
 
     update(id: string, wine: Wine): void {
-        let {description, inStock, myRating, name, price, region} = wine;
+        let {description, image, inStock, myRating, name, price, region} = wine;
         this.af.database.object(`/users/${this.uid}/wines/${id}`).update({
             description,
             inStock,
             myRating,
+            image,
             name,
             price,
             region
